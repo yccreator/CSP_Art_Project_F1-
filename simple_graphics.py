@@ -176,7 +176,84 @@ def draw_curve(points_list):
         fill=_outline_color, 
         width=_line_thickness
     )
+def draw_house(x, y, width, height, house_color):
+    """
+    Draws a house with a base, triangular roof, chimney, windows, and a door
+    based on the student's grid sketch planning sheet.
     
+    AI Attribution: This function was generated using Gemini.
+    Original Student Prompt: "can you draw this its a house" with x, y, width, height, house_color parameters.
+    """
+    # 1. Draw the Chimney (drawn first so it sits behind the roof)
+    # Positions it on the right side of the roof, like the sketch
+    chimney_width = width * 0.15
+    chimney_height = height * 0.4
+    chimney_x = x + (width * 0.65)
+    chimney_y = y - (height * 0.3)
+    _canvas.create_rectangle(
+        chimney_x, chimney_y, 
+        chimney_x + chimney_width, chimney_y + chimney_height,
+        fill=house_color, outline=_outline_color, width=_line_thickness
+    )
+    
+    # 2. Draw the Main House Body (Rectangle)
+    _canvas.create_rectangle(
+        x, y, 
+        x + width, y + height, 
+        fill=house_color, outline=_outline_color, width=_line_thickness
+    )
+    
+    # 3. Draw the Roof (Triangle)
+    # Peak is centered above the house; bottom corners match the house top corners
+    _canvas.create_polygon(
+        x, y,                          # Bottom-left corner
+        x + (width / 2), y - (height * 0.5), # Top peak
+        x + width, y,                  # Bottom-right corner
+        fill=house_color, outline=_outline_color, width=_line_thickness
+    )
+    
+    # 4. Draw the Left Window
+    win_size = width * 0.2
+    win1_x = x + (width * 0.15)
+    win_y = y + (height * 0.2)
+    _canvas.create_rectangle(
+        win1_x, win_y, 
+        win1_x + win_size, win_y + win_size, 
+        fill="white", outline=_outline_color, width=_line_thickness
+    )
+    # Window grid lines
+    _canvas.create_line(win1_x + (win_size / 2), win_y, win1_x + (win_size / 2), win_y + win_size, fill=_outline_color, width=_line_thickness)
+    _canvas.create_line(win1_x, win_y + (win_size / 2), win1_x + win_size, win_y + (win_size / 2), fill=_outline_color, width=_line_thickness)
+    
+    # 5. Draw the Right Window
+    win2_x = x + (width * 0.55)
+    _canvas.create_rectangle(
+        win2_x, win_y, 
+        win2_x + win_size, win_y + win_size, 
+        fill="white", outline=_outline_color, width=_line_thickness
+    )
+    # Window grid lines
+    _canvas.create_line(win2_x + (win_size / 2), win_y, win2_x + (win_size / 2), win_y + win_size, fill=_outline_color, width=_line_thickness)
+    _canvas.create_line(win2_x, win_y + (win_size / 2), win2_x + win_size, win_y + (win_size / 2), fill=_outline_color, width=_line_thickness)
+    
+    # 6. Draw the Door
+    door_w = width * 0.25
+    door_h = height * 0.4
+    door_x = x + (width * 0.55)
+    door_y = y + height - door_h
+    _canvas.create_rectangle(
+        door_x, door_y, 
+        door_x + door_w, door_y + door_h, 
+        fill="brown", outline=_outline_color, width=_line_thickness
+    )
+    # Doorknob
+    knob_r = door_w * 0.1
+    _canvas.create_oval(
+        door_x + door_w * 0.75 - knob_r, door_y + door_h * 0.5 - knob_r,
+        door_x + door_w * 0.75 + knob_r, door_y + door_h * 0.5 + knob_r,
+        fill="gold", outline="black", width=1
+    )
+
 
 def draw_text(x, y, text_string, font_size=16):
     """Draws text on the screen with the top-left corner at (x, y)."""
