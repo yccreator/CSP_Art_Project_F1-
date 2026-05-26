@@ -314,6 +314,29 @@ def my_drawing(width, height):
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
 
+# =====================================================================
+# NEW HELPER FUNCTION
+# =====================================================================
+def draw_cloud(center_x, center_y, size):
+    """Draws a fluffy cloud by overlapping multiple white circles."""
+    # Save the current line thickness so we can restore it later
+    global _line_thickness
+    old_thickness = _line_thickness
+    
+    # Hide the outlines by matching fill and outline to white
+    set_fill_color("white")
+    set_outline_color("white")
+    set_line_thickness(0)
+    
+    # Draw overlapping circles to create the fluffy cloud shape
+    fill_circle(center_x, center_y, size)                  # Center puff
+    fill_circle(center_x - size * 0.6, center_y, size * 0.7)  # Left puff
+    fill_circle(center_x + size * 0.6, center_y, size * 0.7)  # Right puff
+    fill_circle(center_x - size * 0.3, center_y - size * 0.3, size * 0.8) # Top-left puff
+    fill_circle(center_x + size * 0.3, center_y - size * 0.3, size * 0.8) # Top-right puff
+    
+    # Restore original line thickness
+    set_line_thickness(old_thickness)
 
 
 # =====================================================================
@@ -338,11 +361,6 @@ def my_drawing(width, height):
 def my_drawing(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
- def draw_cloud(center_x, center_y, size):
-    """Draws a fluffy cloud by overlapping multiple white circles."""
-    # Save the current line thickness so we can restore it later
-    global _line_thickness
-    old_thickness = _line_thickness
     
     # 2. Draw the clouds
     draw_cloud(150, 120, 40)
@@ -366,6 +384,11 @@ def my_drawing(width, height):
     draw_mountain(180, 200, 350, 300, mountain_color="#34a853")
 
 
+    def draw_cloud(center_x, center_y, size):
+    """Draws a fluffy cloud by overlapping multiple white circles."""
+    # Save the current line thickness so we can restore it later
+    global _line_thickness
+    old_thickness = _line_thickness
     
     # Hide the outlines by matching fill and outline to white
     set_fill_color("white")
