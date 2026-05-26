@@ -265,5 +265,80 @@ def my_drawing(width, height):
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
 
+# draws a house with a sky background
+def my_drawing(width, height):
+    # 1. Fill the background first so everything else sits on top
+    fill_background("#C2E6F5")
+    
+    # 2. Draw the rest of your scene
+    set_line_thickness(2)
+    draw_house(300, 250, 200, 200, "#D9D5C8")
+
+# =====================================================================
+# NEW HELPER FUNCTION
+# =====================================================================
+def draw_cloud(center_x, center_y, size):
+    """Draws a fluffy cloud by overlapping multiple white circles."""
+    # Save the current line thickness so we can restore it later
+    global _line_thickness
+    old_thickness = _line_thickness
+    
+    # Hide the outlines by matching fill and outline to white
+    set_fill_color("white")
+    set_outline_color("white")
+    set_line_thickness(0)
+    
+    # Draw overlapping circles to create the fluffy cloud shape
+    fill_circle(center_x, center_y, size)                  # Center puff
+    fill_circle(center_x - size * 0.6, center_y, size * 0.7)  # Left puff
+    fill_circle(center_x + size * 0.6, center_y, size * 0.7)  # Right puff
+    fill_circle(center_x - size * 0.3, center_y - size * 0.3, size * 0.8) # Top-left puff
+    fill_circle(center_x + size * 0.3, center_y - size * 0.3, size * 0.8) # Top-right puff
+    
+    # Restore original line thickness
+    set_line_thickness(old_thickness)
+
+
+# =====================================================================
+# MAIN DRAWING FUNCTION
+# =====================================================================
+def my_drawing(width, height):
+    # 1. Fill the background sky
+    fill_background("#C2E6F5")
+    
+    # 2. Draw some clouds at different positions and sizes
+    draw_cloud(150, 120, 40)   # A cloud on the top left
+    draw_cloud(600, 150, 50)   # A larger cloud on the right
+    draw_cloud(400, 80, 30)    # A smaller, higher cloud in the middle
+    
+    # 3. Draw the house on top of the sky and clouds
+    set_outline_color("black") # Reset outline color for the house
+    set_line_thickness(2)
+    draw_house(300, 250, 200, 200, "#D9D5C8")
+
+
+# draws a house with a sky, clouds, and a grassy lawn
+def my_drawing(width, height):
+    # 1. Fill the background sky
+    fill_background("#C2E6F5")
+    
+    # 2. Draw the clouds
+    draw_cloud(150, 120, 40)
+    draw_cloud(600, 150, 50)
+    draw_cloud(400, 80, 30)
+    
+    # 3. Draw the flat green grass 
+    # Starts at X=0, Y=450, stretches across the full width, and goes down 150 pixels
+    set_fill_color("#5cb85c")      # A nice, vibrant grass green
+    set_outline_color("#5cb85c")   # Match outline to fill so the grass looks smooth
+    set_line_thickness(1)
+    fill_rectangle(0, 450, width, 150)
+    
+    # 4. Draw the house on top of the grass
+    set_outline_color("black")     # Reset outline color for the house
+    set_line_thickness(2)
+    draw_house(300, 250, 200, 200, "#D9D5C8")
+
+
 # it starts the function
 start(my_drawing)
