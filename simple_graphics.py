@@ -182,3 +182,11 @@ def draw_text(x, y, text_string, font_size=16):
     """Draws text on the screen with the top-left corner at (x, y)."""
     _canvas.create_text(x, y, text=text_string, fill=_fill_color, 
                         anchor="nw", font=("Arial", font_size))
+
+# draws a house
+def my_drawing(width, height):
+    set_line_thickness(2)
+    draw_house(300, 250, 200, 200, "#D9D5C8")
+
+# it starts the function
+start(my_drawing)
