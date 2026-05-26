@@ -292,8 +292,6 @@ def my_drawing(width, height):
     set_line_thickness(2)
     draw_house(house_x, house_y, house_width, house_height, "#D9D5C8")
 
-# it starts the function
-start(my_drawing)
 
 def draw_text(x, y, text_string, font_size=16):
     """Draws text on the screen with the top-left corner at (x, y)."""
@@ -378,6 +376,37 @@ def my_drawing(width, height):
     set_outline_color("black")     # Reset outline color for the house
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
+    
+    # =====================================================================
+# MAIN DRAWING FUNCTION
+# =====================================================================
+def my_drawing(width, height):
+    # 1. Fill the background sky
+    fill_background("#C2E6F5")
+    
+    # 2. Draw some fluffy clouds in the sky
+    draw_cloud(150, 120, 40)   # Top left cloud
+    draw_cloud(650, 100, 50)   # Top right cloud
+    draw_cloud(400, 70, 30)    # Small, high middle cloud
+    
+    # 3. House positioning variables (centered in the sky)
+    house_x = 300
+    house_y = 350                  
+    house_width = 200
+    house_height = 150
+    
+    # 4. Calculate where the tip of the roof is to tie the balloons
+    roof_peak_x = house_x + (house_width / 2)
+    roof_peak_y = house_y - (house_height / 2)
+    
+    # 5. Draw 75 balloons tied to the roof peak
+    draw_balloons(roof_peak_x, roof_peak_y, 75)
+    
+    # 6. Draw the house on top of the balloon strings
+    set_outline_color("black")     # Reset outline color for the house
+    set_line_thickness(2)
+    draw_house(house_x, house_y, house_width, house_height, "#D9D5C8")
+
 
 
 # it starts the function
