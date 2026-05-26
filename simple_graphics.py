@@ -253,7 +253,47 @@ def draw_house(x, y, width, height, house_color):
         door_x + door_w * 0.75 + knob_r, door_y + door_h * 0.5 + knob_r,
         fill="gold", outline="black", width=1
     )
+def draw_balloons(anchor_x, anchor_y, num_balloons):
+    """Draws a cluster of random balloons tied to an anchor point."""
+    for _ in range(num_balloons):
+        # Pick a random spot for each balloon high above the anchor point
+        balloon_x = random.randint(int(anchor_x - 150), int(anchor_x + 150))
+        balloon_y = random.randint(int(anchor_y - 250), int(anchor_y - 50))
+        radius = random.randint(15, 30)
+        
+        # Draw the string first so it sits behind the balloon
+        set_outline_color("gray")
+        set_line_thickness(1)
+        draw_line(anchor_x, anchor_y, balloon_x, balloon_y)
+        
+        # Draw the balloon using a random color
+        set_fill_color(random_color())
+        set_outline_color("black")
+        fill_circle(balloon_x, balloon_y, radius)
 
+def my_drawing(width, height):
+    # Give it a nice sky blue background
+    fill_background("#87CEEB")
+    
+    # House variables
+    house_x = 300
+    house_y = 350 # Pushed down to leave room for the balloons!
+    house_width = 200
+    house_height = 150
+    
+    # Calculate where the tip of the roof is to tie the balloons
+    roof_peak_x = house_x + (house_width / 2)
+    roof_peak_y = house_y - (house_height / 2)
+    
+    # Draw 75 balloons tied to the roof peak
+    draw_balloons(roof_peak_x, roof_peak_y, 75)
+    
+    # Draw the house right on top of the balloon strings
+    set_line_thickness(2)
+    draw_house(house_x, house_y, house_width, house_height, "#D9D5C8")
+
+# it starts the function
+start(my_drawing)
 
 def draw_text(x, y, text_string, font_size=16):
     """Draws text on the screen with the top-left corner at (x, y)."""
