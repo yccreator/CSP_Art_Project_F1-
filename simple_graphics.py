@@ -379,6 +379,10 @@ def my_drawing(width, height):
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
 
+    # 5. Draw the mountain next to the house
+    set_line_thickness(2)
+    draw_mountain(180, 200, 350, 300, mountain_color="#34a853")
+
 
 # it starts the function
 start(my_drawing)
