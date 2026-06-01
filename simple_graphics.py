@@ -108,6 +108,7 @@ def fill_background(color_name):
     w = int(_canvas['width'])
     h = int(_canvas['height'])
     _canvas.create_rectangle(0, 0, w, h, fill=color_name, outline="")
+    #work by Elisa
 
 def draw_line(x1, y1, x2, y2):
     """Draws a line connecting point (x1, y1) to point (x2, y2)."""
