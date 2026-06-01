@@ -26,6 +26,7 @@ def start(draw_function, width=800, height=600):
     
     # Start the GUI loop
     root.mainloop()
+    #Made by AI
 
 # =====================================================================
 # HELPER FUNCTIONS
@@ -74,6 +75,7 @@ def rgb_hex_to_hls(hex_str):
     
     # Convert RGB to HLS
     return colorsys.rgb_to_hls(r, g, b)
+    #Made by AI
 
 # =====================================================================
 # DRAWING API FOR STUDENTS
@@ -335,8 +337,9 @@ def draw_cloud(center_x, center_y, size):
     fill_circle(center_x + size * 0.3, center_y - size * 0.3, size * 0.8) # Top-right puff
     
     # Restore original line thickness
-    set_line_thickness(old_thickness)
-
+    set_line_thickness(old_thickness
+                       
+#Made by AI
 
 # =====================================================================
 # MAIN DRAWING FUNCTION
@@ -344,11 +347,13 @@ def draw_cloud(center_x, center_y, size):
 def my_drawing(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
+    #Made by Elisa
     
     # 2. Draw some clouds at different positions and sizes
     draw_cloud(150, 120, 40)   # A cloud on the top left
     draw_cloud(600, 150, 50)   # A larger cloud on the right
     draw_cloud(400, 80, 30)    # A smaller, higher cloud in the middle
+    #Made by Osmond
     
     # 3. Draw the house on top of the sky and clouds
     set_outline_color("black") # Reset outline color for the house
@@ -360,11 +365,13 @@ def my_drawing(width, height):
 def my_drawing(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
+    #Code by Elisa
     
     # 2. Draw the clouds
     draw_cloud(150, 120, 40)
     draw_cloud(600, 150, 50)
     draw_cloud(400, 80, 30)
+    #Made by Osmond
     
     # 3. Draw the flat green grass 
     # Starts at X=0, Y=450, stretches across the full width, and goes down 150 pixels
@@ -372,11 +379,13 @@ def my_drawing(width, height):
     set_outline_color("#5cb85c")   # Match outline to fill so the grass looks smooth
     set_line_thickness(1)
     fill_rectangle(0, 450, width, 150)
+    #Made by Yoochan
     
     # 4. Draw the house on top of the grass
     set_outline_color("black")     # Reset outline color for the house
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
+    #Made by Yoochan
     
     # =====================================================================
 # MAIN DRAWING FUNCTION
@@ -389,12 +398,14 @@ def my_drawing(width, height):
     draw_cloud(150, 120, 40)   # Top left cloud
     draw_cloud(650, 100, 50)   # Top right cloud
     draw_cloud(400, 70, 30)    # Small, high middle cloud
+    #Code by Osmond
     
     # 3. House positioning variables (centered in the sky)
     house_x = 300
     house_y = 350                  
     house_width = 200
     house_height = 150
+    #Made by Yoochan
     
     # 4. Calculate where the tip of the roof is to tie the balloons
     roof_peak_x = house_x + (house_width / 2)
@@ -402,6 +413,7 @@ def my_drawing(width, height):
     
     # 5. Draw 75 balloons tied to the roof peak
     draw_balloons(roof_peak_x, roof_peak_y, 75)
+    #Code by Cherry
     
     # 6. Draw the house on top of the balloon strings
     set_outline_color("black")     # Reset outline color for the house
