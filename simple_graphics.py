@@ -339,7 +339,7 @@ def draw_cloud(center_x, center_y, size):
     fill_circle(center_x + size * 0.3, center_y - size * 0.3, size * 0.8) # Top-right puff
     
     # Restore original line thickness
-    set_line_thickness(old_thickness
+    set_line_thickness(old_thickness)
                        
 #Made by AI
 
