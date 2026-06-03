@@ -275,6 +275,22 @@ def draw_balloons(anchor_x, anchor_y, num_balloons):
         set_outline_color("black")
         fill_circle(balloon_x, balloon_y, radius)
 
+def draw_bird(x, y, size):
+    set_outline_color("black")
+    set_line_thickness(2)
+
+    draw_curve([
+        (x - size, y),
+        (x, y - size),
+        (x + size, y)
+    ])
+
+    draw_curve([
+        (x + size, y),
+        (x + size * 2, y - size),
+        (x + size * 3, y)
+    ])
+
 def my_drawing(width, height):
     #Cherry's and Elisa's attribution 
     # Give it a nice sky blue background
@@ -356,11 +372,37 @@ def my_drawing(width, height):
     draw_cloud(600, 150, 50)   # A larger cloud on the right
     draw_cloud(400, 80, 30)    # A smaller, higher cloud in the middle
     #Made by Osmond
+
+    set_fill_color("gold")
+    set_outline_color("gold")
+    fill_circle(700, 100, 45)
+
+    # Sun rays
+    draw_line(700, 30, 700, 10)
+    draw_line(700, 170, 700, 190)
+    draw_line(630, 100, 610, 100)
+    draw_line(770, 100, 790, 100)
+    draw_line(650, 50, 635, 35)
+    draw_line(750, 50, 765, 35)
+    draw_line(650, 150, 635, 165)
+    draw_line(750, 150, 765, 165)
     
     # 3. Draw the house on top of the sky and clouds
     set_outline_color("black") # Reset outline color for the house
     set_line_thickness(2)
-    draw_house(300, 250, 200, 200, "#D9D5C8")
+    draw_house(300, 250, 200, 200, "#D9D5C8") 
+    # Birds on left
+    draw_bird(120, 170, 10)
+    draw_bird(170, 140, 10)
+    draw_bird(150, 190, 10)
+    #Made by Cherry
+
+    # Birds on right
+    draw_bird(670, 250, 10)
+    draw_bird(630, 220, 10)
+    draw_bird(700, 200, 10)
+    #Made by Cherry
+    
 
 
 # draws a house with a sky, clouds, and a grassy lawn
@@ -374,6 +416,10 @@ def my_drawing(width, height):
     draw_cloud(600, 150, 50)
     draw_cloud(400, 80, 30)
     #Made by Osmond
+
+    set_fill_color("#8CCB5E")
+    set_outline_color("#8CCB5E")
+    fill_rectangle(0, 450, width, 150)
     
     # 3. Draw the flat green grass 
     # Starts at X=0, Y=450, stretches across the full width, and goes down 150 pixels
@@ -388,6 +434,14 @@ def my_drawing(width, height):
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
     #Made by Yoochan
+    set_fill_color("#BDBDBD")
+    set_outline_color("#BDBDBD")
+
+    fill_triangle(
+        390, 500,
+        430, 500,
+        500, 600
+)
     
     # =====================================================================
 # MAIN DRAWING FUNCTION
@@ -421,6 +475,31 @@ def my_drawing(width, height):
     set_outline_color("black")     # Reset outline color for the house
     set_line_thickness(2)
     draw_house(house_x, house_y, house_width, house_height, "#D9D5C8")
+    
+    flower_positions = [
+    (70, 560), (180, 550), (280, 570),
+    (370, 550), (480, 565), (590, 555),
+    (700, 570)
+    ]
+    for x, y in flower_positions:
+
+    # Stem
+    set_outline_color("green")
+    draw_line(x, y, x, y - 25)
+
+    # Center
+    set_fill_color("yellow")
+    fill_circle(x, y - 30, 4)
+
+    # Petals
+    set_fill_color(random.choice([
+        "pink", "purple", "blue", "orange"
+    ]))
+
+    fill_circle(x, y - 40, 4)
+    fill_circle(x, y - 20, 4)
+    fill_circle(x - 10, y - 30, 4)
+    fill_circle(x + 10, y - 30, 4)
 
 
 
