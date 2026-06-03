@@ -443,64 +443,90 @@ def my_drawing(width, height):
         500, 600
 )
     
-    # =====================================================================
+# =====================================================================
 # MAIN DRAWING FUNCTION
 # =====================================================================
 def my_drawing(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
-    
+
     # 2. Draw some fluffy clouds in the sky
     draw_cloud(150, 120, 40)   # Top left cloud
     draw_cloud(650, 100, 50)   # Top right cloud
     draw_cloud(400, 70, 30)    # Small, high middle cloud
     #Code by Osmond
-    
+
+    # AI did it
+    set_fill_color("gold")
+    set_outline_color("gold")
+    fill_circle(700, 100, 45)
+
+    # AI did it
+    draw_line(700, 30, 700, 10)
+    draw_line(700, 170, 700, 190)
+    draw_line(630, 100, 610, 100)
+    draw_line(770, 100, 790, 100)
+    draw_line(650, 50, 635, 35)
+    draw_line(750, 50, 765, 35)
+    draw_line(650, 150, 635, 165)
+    draw_line(750, 150, 765, 165)
+
     # 3. House positioning variables (centered in the sky)
     house_x = 300
-    house_y = 350                  
+    house_y = 350
     house_width = 200
     house_height = 150
     #Made by Yoochan
-    
+
     # 4. Calculate where the tip of the roof is to tie the balloons
     roof_peak_x = house_x + (house_width / 2)
     roof_peak_y = house_y - (house_height / 2)
-    
+
     # 5. Draw 75 balloons tied to the roof peak
     draw_balloons(roof_peak_x, roof_peak_y, 75)
     #Code by Cherry
-    
+
+    # AI did it
+    draw_bird(120, 170, 10)
+    draw_bird(170, 140, 10)
+    draw_bird(150, 190, 10)
+
+    # AI did it
+    draw_bird(670, 250, 10)
+    draw_bird(630, 220, 10)
+    draw_bird(700, 200, 10)
+
     # 6. Draw the house on top of the balloon strings
-    set_outline_color("black")     # Reset outline color for the house
+    set_outline_color("black")
     set_line_thickness(2)
     draw_house(house_x, house_y, house_width, house_height, "#D9D5C8")
-    
+
+    # AI did it
     flower_positions = [
-    (70, 560), (180, 550), (280, 570),
-    (370, 550), (480, 565), (590, 555),
-    (700, 570)
+        (70, 560), (180, 550), (280, 570),
+        (370, 550), (480, 565), (590, 555),
+        (700, 570)
     ]
+
     for x, y in flower_positions:
 
-    # Stem
-    set_outline_color("green")
-    draw_line(x, y, x, y - 25)
+        # Stem
+        set_outline_color("green")
+        draw_line(x, y, x, y - 25)
 
-    # Center
-    set_fill_color("yellow")
-    fill_circle(x, y - 30, 4)
+        # Center
+        set_fill_color("yellow")
+        fill_circle(x, y - 30, 4)
 
-    # Petals
-    set_fill_color(random.choice([
-        "pink", "purple", "blue", "orange"
-    ]))
+        # Petals
+        set_fill_color(random.choice([
+            "pink", "purple", "blue", "orange"
+        ]))
 
-    fill_circle(x, y - 40, 4)
-    fill_circle(x, y - 20, 4)
-    fill_circle(x - 10, y - 30, 4)
-    fill_circle(x + 10, y - 30, 4)
-
+        fill_circle(x, y - 40, 4)
+        fill_circle(x, y - 20, 4)
+        fill_circle(x - 10, y - 30, 4)
+        fill_circle(x + 10, y - 30, 4)
 
 
 # it starts the function
