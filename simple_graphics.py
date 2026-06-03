@@ -257,6 +257,7 @@ def draw_house(x, y, width, height, house_color):
         fill="gold", outline="black", width=1
     )
 def draw_balloons(anchor_x, anchor_y, num_balloons):
+    #Cherry's attribution for this whole section
     """Draws a cluster of random balloons tied to an anchor point."""
     for _ in range(num_balloons):
         # Pick a random spot for each balloon high above the anchor point
@@ -275,6 +276,7 @@ def draw_balloons(anchor_x, anchor_y, num_balloons):
         fill_circle(balloon_x, balloon_y, radius)
 
 def my_drawing(width, height):
+    #Cherry's and Elisa's attribution 
     # Give it a nice sky blue background
     fill_background("#87CEEB")
     
@@ -287,7 +289,7 @@ def my_drawing(width, height):
     # Calculate where the tip of the roof is to tie the balloons
     roof_peak_x = house_x + (house_width / 2)
     roof_peak_y = house_y - (house_height / 2)
-    
+    #AI's attribution
     # Draw 75 balloons tied to the roof peak
     draw_balloons(roof_peak_x, roof_peak_y, 75)
     
