@@ -510,7 +510,7 @@ def my_drawing(width, height):
 
     for x, y in flower_positions:
 
-        # Stem
+        # Stem (AI attribution) 
         set_outline_color("green")
         draw_line(x, y, x, y - 25)
 
