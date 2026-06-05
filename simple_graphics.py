@@ -456,12 +456,12 @@ def my_drawing(width, height):
     draw_cloud(400, 70, 30)    # Small, high middle cloud
     #Code by Osmond
 
-    # AI did it
+    # AI did it draw the sun
     set_fill_color("gold")
     set_outline_color("gold")
     fill_circle(700, 100, 45)
 
-    # AI did it
+    # AI did it balloon string
     draw_line(700, 30, 700, 10)
     draw_line(700, 170, 700, 190)
     draw_line(630, 100, 610, 100)
