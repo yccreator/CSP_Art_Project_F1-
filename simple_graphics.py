@@ -523,9 +523,6 @@ def background_draw(width, height):
         fill_circle(x - 10, y - 30, 4)
         fill_circle(x + 10, y - 30, 4)
 
-# Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
-draw_person_with_balloon(200, 400, 20, "red", "purple") # Elisa
-
 def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
     """
     Draws a person wearing a colored shirt and holding a balloon.
@@ -587,6 +584,9 @@ def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
         fill=balloon_color, outline=_outline_color, width=_line_thickness
     )
 #code by elisa
+
+# Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
+draw_person_with_balloon(200, 400, 20, "red", "purple") # Elisa
 
 # it starts the function
 start(background_draw)
