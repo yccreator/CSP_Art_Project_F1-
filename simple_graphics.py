@@ -529,7 +529,7 @@ def my_drawing(width, height):
         fill_circle(x + 10, y - 30, 4)
         
         # Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
-        draw_person_with_balloon(200, 400, 20, "red", "purple")
+        draw_person_with_balloon(200, 400, 20, "red", "purple") #code by Elisa
 
 def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
     """
@@ -591,7 +591,7 @@ def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
         x + size * 2.0, y - size * 1.5, 
         fill=balloon_color, outline=_outline_color, width=_line_thickness
     )
-
+#code by elisa
 
 # it starts the function
 start(my_drawing)
