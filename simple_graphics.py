@@ -510,26 +510,26 @@ def background_draw(width, height):
 
     for x, y in flower_positions:
 
-        # Stem (AI attribution) 
-        set_outline_color("green")
-        draw_line(x, y, x, y - 25)
+    # Stem (AI attribution) 
+    set_outline_color("green")
+    draw_line(x, y, x, y - 25)
 
-        # Center
-        set_fill_color("yellow")
-        fill_circle(x, y - 30, 4)
+    # Center
+    set_fill_color("yellow")
+    fill_circle(x, y - 30, 4)
 
-        # Petals
-        set_fill_color(random.choice([
-            "pink", "purple", "blue", "orange"
-        ]))
+    # Petals
+    set_fill_color(random.choice([
+        "pink", "purple", "blue", "orange"
+    ]))
 
-        fill_circle(x, y - 40, 4)
-        fill_circle(x, y - 20, 4)
-        fill_circle(x - 10, y - 30, 4)
-        fill_circle(x + 10, y - 30, 4)
-        
-        # Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
-        draw_person_with_balloon(200, 400, 20, "red", "purple") #code by Elisa
+    fill_circle(x, y - 40, 4)
+    fill_circle(x, y - 20, 4)
+    fill_circle(x - 10, y - 30, 4)
+    fill_circle(x + 10, y - 30, 4)
+
+# Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
+draw_person_with_balloon(200, 400, 20, "red", "purple") # Elisa
 
 def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
     """
@@ -594,4 +594,4 @@ def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
 #code by elisa
 
 # it starts the function
-start(my_drawing)
+start(background_draw)
