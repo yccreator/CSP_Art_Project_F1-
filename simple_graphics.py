@@ -496,6 +496,10 @@ def background_draw(width, height):
     draw_bird(630, 220, 10)
     draw_bird(700, 200, 10)
 
+    draw_detailed_bird(100, 100, "blue")
+    draw_detailed_bird(250, 150, "#FF5733")
+    #Osmond and AI
+
     # 6. Draw the house on top of the balloon strings
     set_outline_color("black")
     set_line_thickness(2)
@@ -589,6 +593,42 @@ def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
 
 # Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
 draw_person_with_balloon(200, 400, 20, "red", "purple") # Elisa
+
+def draw_detailed_bird(x, y, color):
+    """
+    Draws a flying bird with wings extended upward and a sharp beak pointing right.
+    
+    AI Attribution: This function was generated using Gemini.
+    Original Student Prompt: "thats a penguin I want a flying bird" (with previous parameters x, y, color)
+    """
+    # 1. Tail feathers (spread out straight behind)
+    _canvas.create_polygon(x - 15, y, x - 35, y - 10, x - 30, y + 5, 
+                           fill=color, outline=_outline_color, width=_line_thickness)
+    
+    # 2. Main body (horizontal oval for flying)
+    _canvas.create_oval(x - 20, y - 10, x + 15, y + 10, 
+                        fill=color, outline=_outline_color, width=_line_thickness)
+    
+    # 3. Head (extended forward)
+    _canvas.create_oval(x + 5, y - 15, x + 25, y + 5, 
+                        fill=color, outline=_outline_color, width=_line_thickness)
+    
+    # 4. Back wing (drawn behind/above the body)
+    _canvas.create_polygon(x + 5, y - 5, x + 15, y - 25, x - 5, y - 20, 
+                           fill=color, outline=_outline_color, width=_line_thickness)
+
+    # 5. Front wing (drawn overlapping the body, extending high up and back)
+    _canvas.create_polygon(x - 5, y + 5, x - 25, y - 35, x + 10, y - 5, 
+                           fill=color, outline=_outline_color, width=_line_thickness)
+    
+    # 6. Sharp beak (pointing right)
+    _canvas.create_polygon(x + 23, y - 8, x + 40, y - 5, x + 23, y - 2, 
+                           fill="orange", outline=_outline_color, width=_line_thickness)
+    
+    # 7. Eye
+    _canvas.create_oval(x + 15, y - 10, x + 18, y - 7, 
+                        fill="black", outline="black")
+
 
 # it starts the function
 start(background_draw)
