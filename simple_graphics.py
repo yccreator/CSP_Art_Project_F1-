@@ -110,7 +110,7 @@ def fill_background(color_name):
     w = int(_canvas['width'])
     h = int(_canvas['height'])
     _canvas.create_rectangle(0, 0, w, h, fill=color_name, outline="")
-    #work by Elisa
+ 
 
 def draw_line(x1, y1, x2, y2):
     """Draws a line connecting point (x1, y1) to point (x2, y2)."""
@@ -276,6 +276,7 @@ def draw_balloons(anchor_x, anchor_y, num_balloons):
         fill_circle(balloon_x, balloon_y, radius)
 
 def draw_bird(x, y, size):
+    #Cherry
     set_outline_color("black")
     set_line_thickness(2)
 
