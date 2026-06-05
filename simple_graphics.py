@@ -591,8 +591,6 @@ def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
     )
 #code by elisa
 
-# Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
-draw_person_with_balloon(200, 400, 20, "red", "purple") # Elisa
 
 def draw_detailed_bird(x, y, color):
     """
