@@ -291,7 +291,7 @@ def draw_bird(x, y, size):
         (x + size * 3, y)
     ])
 
-def my_drawing(width, height):
+def connect_balloon(width, height):
     #Cherry's and Elisa's attribution 
     # Give it a nice sky blue background
     fill_background("#87CEEB")
@@ -320,12 +320,12 @@ def draw_text(x, y, text_string, font_size=16):
                         anchor="nw", font=("Arial", font_size))
 
 # draws a house
-def my_drawing(width, height):
+def lin_thickness(width, height):
     set_line_thickness(2)
     draw_house(300, 250, 200, 200, "#D9D5C8")
 
 # draws a house with a sky background
-def my_drawing(width, height):
+def rest_house(width, height):
     # 1. Fill the background first so everything else sits on top
     fill_background("#C2E6F5")
     
@@ -362,7 +362,7 @@ def draw_cloud(center_x, center_y, size):
 # =====================================================================
 # MAIN DRAWING FUNCTION
 # =====================================================================
-def my_drawing(width, height):
+def more_clouds(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
     #Made by Elisa
@@ -406,7 +406,7 @@ def my_drawing(width, height):
 
 
 # draws a house with a sky, clouds, and a grassy lawn
-def my_drawing(width, height):
+def clound_numtwo(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
     #Code by Elisa
@@ -446,7 +446,7 @@ def my_drawing(width, height):
 # =====================================================================
 # MAIN DRAWING FUNCTION
 # =====================================================================
-def my_drawing(width, height):
+def background_draw(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
 
