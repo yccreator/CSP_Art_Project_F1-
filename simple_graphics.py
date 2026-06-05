@@ -366,7 +366,6 @@ def draw_cloud(center_x, center_y, size):
 def more_clouds(width, height):
     # 1. Fill the background sky
     fill_background("#C2E6F5")
-    #Made by Elisa
     
     # 2. Draw some clouds at different positions and sizes
     draw_cloud(150, 120, 40)   # A cloud on the top left
