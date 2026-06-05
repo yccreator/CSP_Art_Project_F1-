@@ -527,6 +527,70 @@ def my_drawing(width, height):
         fill_circle(x, y - 20, 4)
         fill_circle(x - 10, y - 30, 4)
         fill_circle(x + 10, y - 30, 4)
+        
+        # Draws a person at x=200, y=400, size=20, with a red shirt and purple balloon
+        draw_person_with_balloon(200, 400, 20, "red", "purple")
+
+def draw_person_with_balloon(x, y, size, shirt_color, balloon_color):
+    """
+    Draws a person wearing a colored shirt and holding a balloon.
+    
+    AI Attribution: This function was generated using Gemini.
+    Original Student Prompt: <ENTER YOUR PROMPT HERE>
+    """
+    # 1. Draw the Head
+    _canvas.create_oval(
+        x - size * 0.5, y, 
+        x + size * 0.5, y + size, 
+        fill="", outline=_outline_color, width=_line_thickness
+    )
+    
+    # 2. Draw the Shirt (Body)
+    _canvas.create_rectangle(
+        x - size * 0.3, y + size, 
+        x + size * 0.3, y + size * 2.5, 
+        fill=shirt_color, outline=_outline_color, width=_line_thickness
+    )
+    
+    # 3. Draw the Legs
+    _canvas.create_line( # Left Leg
+        x - size * 0.15, y + size * 2.5, 
+        x - size * 0.5, y + size * 4, 
+        fill=_outline_color, width=_line_thickness
+    )
+    _canvas.create_line( # Right Leg
+        x + size * 0.15, y + size * 2.5, 
+        x + size * 0.5, y + size * 4, 
+        fill=_outline_color, width=_line_thickness
+    )
+    
+    # 4. Draw the Left Arm (Resting)
+    _canvas.create_line(
+        x - size * 0.3, y + size * 1.2, 
+        x - size * 0.8, y + size * 1.8, 
+        fill=_outline_color, width=_line_thickness
+    )
+    
+    # 5. Draw the Right Arm (Raised holding the balloon)
+    _canvas.create_line(
+        x + size * 0.3, y + size * 1.2, 
+        x + size * 1.0, y + size * 0.5, 
+        fill=_outline_color, width=_line_thickness
+    )
+    
+    # 6. Draw the Balloon String
+    _canvas.create_line(
+        x + size * 1.0, y + size * 0.5, 
+        x + size * 1.5, y - size * 1.5, 
+        fill="gray", width=1
+    )
+    
+    # 7. Draw the Balloon
+    _canvas.create_oval(
+        x + size * 1.0, y - size * 2.7, 
+        x + size * 2.0, y - size * 1.5, 
+        fill=balloon_color, outline=_outline_color, width=_line_thickness
+    )
 
 
 # it starts the function
